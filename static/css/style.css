@@ -1,0 +1,23 @@
+body{
+    padding:0px;
+    margin:0px;
+}
+
+.navbar{
+    background-color:#2b669a !important;
+    border:0px;
+    border-radius:00px;
+}
+
+.navbar-nav>li>a{
+    color:#FFF !important;
+}
+.exp-img{
+    height:100px !important;
+    width:auto;
+}
+.exp-text>h4{
+    text-align:center !important;
+    margin-left:0%   !important;
+
+ }

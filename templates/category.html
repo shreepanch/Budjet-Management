@@ -1,0 +1,52 @@
+{% extends 'base/master.html'%}
+{% load staticfiles %}
+{% block 'title'%}
+Category
+{%endblock%}
+{% block 'content'%}
+
+<div class="container">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Add Category
+            </div>
+            <div class="panel-body">
+                <form method="post" action="#">
+                {{form}}
+                {% csrf_token %}<br/>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Category Table</div>
+                <div class="panel-body">
+                    <table class="table">
+
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Action</th>
+
+                     {% for i in category %}
+                    <tr>
+                        <td>{{i.title}}</td>
+                        <td>{{i.date}}</td>
+                        <td><a href="{% url 'category_edit' i.id %}">Edit</a> | <a  href="#" onclick="delete_('{% url 'category_delete' i.id %}')"> Delete</a></td>
+                    </tr>
+                    {% endfor %}
+
+                    </table>
+
+                 </div>
+            </div>
+        </div>
+</div>
+
+
+{%endblock%}

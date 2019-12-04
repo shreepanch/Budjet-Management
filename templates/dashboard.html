@@ -1,0 +1,28 @@
+{% extends 'base/master.html'%}
+{% load staticfiles %}
+{% block 'title'%}
+DashBoard
+{%endblock%}
+{% block 'content'%}
+<div class="row">
+    <div class="col-md-4" align="center">
+        <img src="{% static 'img/income.jpg'  %}" class="exp-img" >
+        <a href="{% url 'income' %}" class="exp-text" ><h4>Income</h4>
+        </a>
+    </div>
+    <div class="col-md-4" align="center" >
+        <img src="{% static 'img/expenses.png'  %}" class="exp-img" >
+        <a  href="{% url 'expense' %}"  class="exp-text"><h4>Expense</h4>
+        </a>
+    </div>
+    <div class="col-md-4" align="center">
+        <img src="{% static 'img/report.jpg'  %}" class="exp-img">
+        <a  href="{% url 'category' %}" class="exp-text"><h4>Category</h4>
+        </a>
+    </div>
+</div>
+<hr>
+
+
+
+{% endblock %}
